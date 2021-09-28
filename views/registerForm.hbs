@@ -1,0 +1,70 @@
+<div class='titleForm'>
+  <span class='formText vhod projectName'>
+    Deli-Very Kebab
+  </span>
+</div>
+<div class='sections'>
+  <div class='mapWrapper'>
+    <div
+      id='map'
+      style='width: 570px;
+    height: 570px;
+    border-radius: 25px;
+    overflow: hidden;'
+    ></div>
+  </div>
+  <form id='registration' class='form' method='post' action='/registration'>
+    <span class='formText vhod'>
+      Регистрация
+    </span>
+    <div class='formText'>
+      <input type='text' name='login' placeholder='Имя' required />
+    </div>
+    <div class='formText'>
+      <input type='tel' name='phone' placeholder='Номер телефона' required />
+    </div>
+    <div class='formText radio'>
+      <label>
+        <input type='radio' value='1' name='role' />
+        <span>Покупатель</span>
+      </label>
+      <label>
+        <input type='radio' value='2' name='role' />
+        <span>Курьер</span>
+      </label>
+    </div>
+    <div class='formText'>
+      <input type='password' name='password' placeholder='Пароль' required />
+    </div>
+    <div class='formText'>
+      <input
+        type='text'
+        name='address'
+        id='address'
+        placeholder='Укажите адрес на карте'
+        required
+        readonly
+      />
+      <input
+        type='text'
+        name='coords'
+        id='adCoords'
+        placeholder='Адрес'
+        required
+        readonly
+        hidden
+      />
+    </div>
+    <div id='out'></div>
+    <div class='formText submitForm'>
+      <button type='submit' class='formButton'>Зарегистрироваться</button>
+    </div>
+    <div class='formText vhod'>
+      <button
+        type='button'
+        id='formLogin'
+        class='linkButton'
+      >Авторизоваться</button>
+    </div>
+  </form>
+</div>

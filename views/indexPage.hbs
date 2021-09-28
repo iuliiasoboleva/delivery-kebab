@@ -1,0 +1,80 @@
+<form class='form' style='margin-left: 0px'>
+  <span class='formText vhod projectName'> Deli-Very Kebab </span>
+</form>
+<div class='adressInput'>
+  {{#if isAutorize}}
+  <div class='adressItem username' id='userData' data-coords='{{coords}}'>
+    <span>{{username}}
+      -
+      {{#if roleUser}}Покупатель{{else}}Курьер{{/if}}</span>
+  </div>
+  {{/if}}
+  <div class='adressItem nav'>
+    {{#if isAutorize}}
+    {{#if roleUser}}
+    <style>
+      #inputAddress {
+        display: block;
+      }
+    </style>
+    <button id='userProfile' class='user-style' type='button'>Профиль</button>
+    {{/if}}
+    {{#if roleCourier}}
+    <button id='courierProfile' class='courier-style' type='button'>Профиль</button>
+    <button id='createProduct' class='add-style' type='button'>Добавить
+      доставку</button>
+    {{/if}}
+    <button id='logOut' class='logout-style' type='button'>Выйти</button>
+    {{else}}
+    <button id='formLogin' class='login-style' type='button'>Логин</button>
+    <button id='formRegister' class='reg-style' type='button'>Регистрация</button>
+    <style>
+      .adressInput {
+        justify-content: flex-end;
+      }
+    </style>
+    {{/if}}
+  </div>
+</div>
+
+<div class='productsListing'>
+  <div class='mainBuyers' id='mainBuyers'>
+    {{#if db}}
+    {{#each db}}
+    <div class='products' id='product_{{id}}' data-coords='{{coords}}'>
+      <div class='product-image'>
+        <img src='/src/images/img_{{id}}.jpg' />
+      </div>
+      <div class='info'>
+        <div class='product-name'>Название: {{name}}</div>
+        <div class='product-price'>Цена: {{price}}</div>
+        <div class='product-discount'>Цена со скидкой: {{discount}}</div>
+        <div class='product-time'>Адрес: {{address}}</div>
+        {{#if ../roleUser}}
+        <button style='margin-top: 25px;' class='user-style' type='button' data-type='buy'
+          id='buy_{{id}}'>Купить</button>
+        {{/if}}
+      </div>
+      <div class='mapWrapper'>
+        <div id='map_{{id}}' class='listing_map' style='width: 500px; height: 250px;' data-coords={{coords}}
+          data-id={{id}}></div>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <h2 class='catalog-empty'>Нет доступных заказов</h2>
+    {{/if}}
+  </div>
+
+  <div class='mainBasket' style='display: none;'>
+    <h3><b>Корзина</b></h3>
+    <br />
+    <div>Сумма заказа:</div>
+    <div>Статус заказа:</div>
+    <div>
+      Позвонить курьеру:
+      <br />
+      <span><a href='”tel:+79998887766”'>+7(999)888-77-66</a></span>
+    </div>
+  </div>
+</div>

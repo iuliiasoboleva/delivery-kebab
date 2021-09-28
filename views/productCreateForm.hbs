@@ -1,0 +1,80 @@
+<div class='titleForm'>
+  <span class='formText vhod projectName'>
+    Deli-Very Kebab
+  </span>
+</div>
+<div class='sections'>
+  <div class='mapWrapper'>
+    <div
+      id='map'
+      style='width: 570px;
+    height: 570px;
+    border-radius: 25px;
+    overflow: hidden;'
+    ></div>
+  </div>
+  <form
+    class='form'
+    enctype='multipart/form-data'
+    id='addProduct'
+    action='/product/add'
+    method='POST'
+  >
+    <span class='formText vhod' style='margin-bottom: 50px;'>
+      Добавить заказ
+    </span>
+    <div class='formText'>
+      <input type='text' name='name' placeholder='Название' required />
+    </div>
+    <div class='formText'>
+      <input
+        type='text'
+        name='address'
+        id='address'
+        placeholder='Укажите адрес на карте'
+        required
+        readonly
+      />
+      <input
+        type='text'
+        name='coords'
+        id='adCoords'
+        placeholder='Адрес'
+        required
+        hidden
+        readonly
+      />
+    </div>
+    <div class='formText'>
+      <input type='number' name='price' placeholder='Цена заказа' required />
+    </div>
+    <div class='formText'>
+      <input
+        type='number'
+        name='discount'
+        placeholder='Цена со скидкой'
+        required
+      />
+    </div>
+    <div class='formText'>
+      <label for='file-upload' class='custom-file-upload'>
+        <i class='fa fa-cloud-upload'></i>
+        Загрузить фото
+      </label>
+      <input
+        id='file-upload'
+        type='file'
+        name='img'
+        class='add-image'
+        required
+      />
+    </div>
+    <div id='out'></div>
+    <div class='formText submitForm'>
+      <button type='submit' class='formButton'>Отправить</button>
+    </div>
+    <div class='formText'>
+      <a href='/'>На главную</a>
+    </div>
+  </form>
+</div>
