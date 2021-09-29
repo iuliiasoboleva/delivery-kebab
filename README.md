@@ -12,9 +12,6 @@
 #### Добавление заказа:
 ![](/screenshots/add-product.png)
 
-#### Добавление заказа:
-![](/screenshots/add-product.png)
-
 #### Интерфейс курьера:
 ![](/screenshots/courier.png)
 
